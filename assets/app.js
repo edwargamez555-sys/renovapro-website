@@ -87,7 +87,9 @@ const COPY = {
       c1: "Leistungen", c2: "Unternehmen", c3: "Recht", portal: "Mitarbeiter-Portal",
       l1: "Renovierung", l2: "Reinigung", l3: "Elektro & Sanitär", l4: "Bauleitung",
       r1: "Impressum", r2: "Datenschutz", r3: "AGB"
-    }
+    },
+    photos: { before: "Vorher", after: "Nachher", tbd: "Foto folgt" },
+    sites: { title: "Aktive Baustellen", lbl_progress: "Fortschritt" }
   },
 
   es: {
@@ -164,7 +166,9 @@ const COPY = {
       c1: "Servicios", c2: "Empresa", c3: "Legal", portal: "Portal interno",
       l1: "Renovación", l2: "Limpieza", l3: "Eléctrica y sanitaria", l4: "Control de obra",
       r1: "Aviso legal", r2: "Privacidad", r3: "Términos"
-    }
+    },
+    photos: { before: "Antes", after: "Después", tbd: "Foto pendiente" },
+    sites: { title: "Obras activas", lbl_progress: "Progreso" }
   },
 
   en: {
@@ -241,7 +245,9 @@ const COPY = {
       c1: "Services", c2: "Company", c3: "Legal", portal: "Staff portal",
       l1: "Renovation", l2: "Cleaning", l3: "Electrical & plumbing", l4: "Site management",
       r1: "Imprint", r2: "Privacy", r3: "Terms"
-    }
+    },
+    photos: { before: "Before", after: "After", tbd: "Photo pending" },
+    sites: { title: "Active worksites", lbl_progress: "Progress" }
   }
 };
 
@@ -324,6 +330,7 @@ function applyI18n() {
 // ── Render: 4 service pillars ────────────────────────────────────
 function renderPillars() {
   const t = COPY[STATE.lang];
+  const labels = COPY[STATE.lang].photos || { before: "Vorher", after: "Nachher", tbd: "Foto folgt" };
   const root = $("#pillars");
   root.innerHTML = "";
   t.pillars.forEach((p, i) => {
@@ -343,8 +350,14 @@ function renderPillars() {
       <p>${p.d}</p>`;
     let body = "";
     if (!p.lock) {
+      // before/after photo strip (placeholder until real photos provided)
+      body += `
+        <div class="pillar-photos" aria-label="${labels.before} / ${labels.after}">
+          <figure class="ph"><span class="ph-tbd">${labels.tbd}</span><figcaption>${labels.before}</figcaption></figure>
+          <figure class="ph after"><span class="ph-tbd">${labels.tbd}</span><figcaption>${labels.after}</figcaption></figure>
+        </div>`;
       const itemsHtml = p.items.map(it => `<li>${it}</li>`).join("");
-      body = `<div class="pillar-items${isOpen ? " open" : ""}"><ul>${itemsHtml}</ul></div>`;
+      body += `<div class="pillar-items${isOpen ? " open" : ""}"><ul>${itemsHtml}</ul></div>`;
     }
     div.innerHTML = head + body;
     div.addEventListener("click", () => onPillarClick(i, p));
@@ -411,26 +424,26 @@ function renderProcess() {
 // ── Render: Dresden map ──────────────────────────────────────────
 function renderMap() {
   const root = $("#map-svg");
-  // SVG background (district silhouettes + Elbe + labels)
+  // SVG background (district silhouettes + Elbe + labels) — light + warm palette
   const svgBg = `
     <svg viewBox="0 0 100 70" style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="none">
       <defs>
         <pattern id="mapgrid" width="6" height="6" patternUnits="userSpaceOnUse">
-          <path d="M 6 0 L 0 0 0 6" fill="none" stroke="rgba(44,58,85,0.4)" stroke-width="0.2"/>
+          <path d="M 6 0 L 0 0 0 6" fill="none" stroke="rgba(137,121,102,0.20)" stroke-width="0.2"/>
         </pattern>
       </defs>
       <rect width="100" height="70" fill="url(#mapgrid)"/>
-      <path d="M 0,42 Q 18,38 28,40 Q 40,46 52,38 Q 65,30 78,34 Q 90,38 100,32" stroke="rgba(77,184,224,0.35)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-      <path d="M 0,42 Q 18,38 28,40 Q 40,46 52,38 Q 65,30 78,34 Q 90,38 100,32" stroke="rgba(77,184,224,0.6)" stroke-width="0.6" fill="none" stroke-dasharray="0.5 1.5"/>
-      <path d="M 8 18 Q 22 12 38 16 Q 50 22 48 32 Q 38 36 22 32 Q 10 28 8 18 Z" fill="rgba(27,37,56,0.5)" stroke="rgba(44,58,85,0.7)" stroke-width="0.3"/>
-      <path d="M 52 14 Q 70 10 84 18 Q 92 26 86 32 Q 72 32 60 28 Q 50 22 52 14 Z" fill="rgba(27,37,56,0.5)" stroke="rgba(44,58,85,0.7)" stroke-width="0.3"/>
-      <path d="M 16 46 Q 28 44 40 50 Q 50 58 42 64 Q 26 66 16 60 Q 10 52 16 46 Z" fill="rgba(27,37,56,0.5)" stroke="rgba(44,58,85,0.7)" stroke-width="0.3"/>
-      <path d="M 54 48 Q 70 42 88 46 Q 94 56 84 62 Q 68 64 56 60 Q 50 54 54 48 Z" fill="rgba(27,37,56,0.5)" stroke="rgba(44,58,85,0.7)" stroke-width="0.3"/>
-      <text x="22" y="24" fill="rgba(110,123,149,0.7)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">PIESCHEN</text>
-      <text x="62" y="20" fill="rgba(110,123,149,0.7)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">LOSCHWITZ</text>
-      <text x="22" y="56" fill="rgba(110,123,149,0.7)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">PLAUEN</text>
-      <text x="62" y="56" fill="rgba(110,123,149,0.7)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">STRIESEN</text>
-      <text x="44" y="40" fill="rgba(77,184,224,0.6)" font-size="2.4" font-family="JetBrains Mono" letter-spacing="0.4">ELBE</text>
+      <path d="M 0,42 Q 18,38 28,40 Q 40,46 52,38 Q 65,30 78,34 Q 90,38 100,32" stroke="rgba(123,143,176,0.35)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M 0,42 Q 18,38 28,40 Q 40,46 52,38 Q 65,30 78,34 Q 90,38 100,32" stroke="rgba(123,143,176,0.55)" stroke-width="0.6" fill="none" stroke-dasharray="0.5 1.5"/>
+      <path d="M 8 18 Q 22 12 38 16 Q 50 22 48 32 Q 38 36 22 32 Q 10 28 8 18 Z" fill="rgba(229,220,200,0.55)" stroke="rgba(185,169,137,0.65)" stroke-width="0.3"/>
+      <path d="M 52 14 Q 70 10 84 18 Q 92 26 86 32 Q 72 32 60 28 Q 50 22 52 14 Z" fill="rgba(229,220,200,0.55)" stroke="rgba(185,169,137,0.65)" stroke-width="0.3"/>
+      <path d="M 16 46 Q 28 44 40 50 Q 50 58 42 64 Q 26 66 16 60 Q 10 52 16 46 Z" fill="rgba(229,220,200,0.55)" stroke="rgba(185,169,137,0.65)" stroke-width="0.3"/>
+      <path d="M 54 48 Q 70 42 88 46 Q 94 56 84 62 Q 68 64 56 60 Q 50 54 54 48 Z" fill="rgba(229,220,200,0.55)" stroke="rgba(185,169,137,0.65)" stroke-width="0.3"/>
+      <text x="22" y="24" fill="rgba(137,121,102,0.85)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">PIESCHEN</text>
+      <text x="62" y="20" fill="rgba(137,121,102,0.85)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">LOSCHWITZ</text>
+      <text x="22" y="56" fill="rgba(137,121,102,0.85)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">PLAUEN</text>
+      <text x="62" y="56" fill="rgba(137,121,102,0.85)" font-size="2.8" font-family="JetBrains Mono" letter-spacing="0.3">STRIESEN</text>
+      <text x="44" y="40" fill="rgba(123,143,176,0.70)" font-size="2.4" font-family="JetBrains Mono" letter-spacing="0.4">ELBE</text>
     </svg>`;
   const pinsHtml = SITES.map(s => {
     const cls = s.tone === "green" ? "green" : s.tone === "amber" ? "amber" : "";
@@ -442,6 +455,26 @@ function renderMap() {
     </div>`;
   }).join("");
   root.innerHTML = svgBg + pinsHtml;
+}
+
+// ── Render: active worksites list with progress bars ─────────────
+function renderActiveSites() {
+  const root = $("#active-sites-list");
+  if (!root) return;
+  const t = COPY[STATE.lang].sites || { title: "Active worksites" };
+  const inProgress = SITES.filter(s => s.pct < 100);
+  const rowsHtml = inProgress.map(s => {
+    const cls = s.tone === "amber" ? "amber" : "";
+    return `
+      <li class="as-row ${cls}">
+        <span class="as-region">${s.addr}</span>
+        <span class="as-bar"><span style="width:${s.pct}%"></span></span>
+        <span class="as-pct">${s.pct}%</span>
+      </li>`;
+  }).join("");
+  root.innerHTML = `
+    <div class="as-head">${t.title}</div>
+    <ul class="active-sites-rows">${rowsHtml}</ul>`;
 }
 
 // ── Render: references table ─────────────────────────────────────
@@ -541,6 +574,7 @@ function bindLangSwitcher() {
       renderRefs();
       renderValues();
       renderForm();
+      renderActiveSites();
       validateForm();
     });
   });
@@ -553,6 +587,7 @@ function init() {
   renderGewerke();
   renderProcess();
   renderMap();
+  renderActiveSites();
   renderRefs();
   renderValues();
   renderForm();

@@ -63,29 +63,29 @@
       <svg viewBox="0 0 400 500" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <pattern id="hg" width="24" height="24" patternUnits="userSpaceOnUse">
-            <path d="M24 0H0V24" fill="none" stroke="rgba(44,58,85,0.35)" stroke-width="0.6"/>
+            <path d="M24 0H0V24" fill="none" stroke="rgba(137,121,102,0.30)" stroke-width="0.6"/>
           </pattern>
           <linearGradient id="hgGlow" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="rgba(77,184,224,0.18)"/>
-            <stop offset="1" stop-color="rgba(77,184,224,0)"/>
+            <stop offset="0" stop-color="rgba(200,97,42,0.16)"/>
+            <stop offset="1" stop-color="rgba(200,97,42,0)"/>
           </linearGradient>
         </defs>
         <rect width="400" height="500" fill="url(#hg)"/>
-        <g fill="none" stroke="#2C3A55" stroke-width="1.5">
+        <g fill="none" stroke="#B9A989" stroke-width="1.5">
           <rect x="50" y="70" width="300" height="360" rx="4"/>
           <line x1="50" y1="230" x2="230" y2="230"/>
           <line x1="230" y1="70" x2="230" y2="360"/>
           <line x1="230" y1="360" x2="350" y2="360"/>
           <line x1="130" y1="230" x2="130" y2="430"/>
         </g>
-        <g fill="none" stroke="#3E4D6E" stroke-width="1">
+        <g fill="none" stroke="#897966" stroke-width="1">
           <path d="M 100 230 A 28 28 0 0 1 128 258"/>
           <path d="M 230 130 A 24 24 0 0 0 254 154"/>
           <path d="M 230 320 A 24 24 0 0 1 254 296"/>
         </g>
         <rect x="232" y="72" width="116" height="156" fill="url(#hgGlow)"/>
-        <rect x="232" y="72" width="116" height="156" fill="none" stroke="#4DB8E0" stroke-width="1.4" stroke-dasharray="3 3"/>
-        <g font-family="JetBrains Mono" font-size="10" fill="#6E7B95" letter-spacing="1.2">
+        <rect x="232" y="72" width="116" height="156" fill="none" stroke="#C8612A" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <g font-family="JetBrains Mono" font-size="10" fill="#897966" letter-spacing="1.2">
           <text x="100" y="160">WOHNEN</text>
           <text x="258" y="152">KÜCHE</text>
           <text x="60"  y="330">SCHLAFEN</text>
@@ -93,8 +93,8 @@
           <text x="258" y="395">BAD</text>
         </g>
         <g>
-          <circle cx="290" cy="112" r="4" fill="#4DB8E0"/>
-          <circle cx="290" cy="112" r="10" fill="none" stroke="#4DB8E0" stroke-opacity="0.4">
+          <circle cx="290" cy="112" r="4" fill="#C8612A"/>
+          <circle cx="290" cy="112" r="10" fill="none" stroke="#C8612A" stroke-opacity="0.4">
             <animate attributeName="r" from="6" to="16" dur="2.4s" repeatCount="indefinite"/>
             <animate attributeName="stroke-opacity" from="0.6" to="0" dur="2.4s" repeatCount="indefinite"/>
           </circle>
@@ -179,6 +179,7 @@
           <span><span class="legend-dot" style="background:var(--green)"></span><span data-i18n="trust.leg2">Übergeben</span></span>
           <span><span class="legend-dot" style="background:var(--amber)"></span><span data-i18n="trust.leg3">Aufmaß / Start</span></span>
         </div>
+        <div id="active-sites-list" class="active-sites"></div>
       </div>
     </div>
   </div>
