@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════════════════════════════
+   RenovaPro Design System — colors_and_type.css
+   Industrial dark-mode dashboard for a Dresden-based renovation
+   company. Based on /design/src/theme.js (the v0.9 prototype) and
+   /src/web/src/app/globals.css (the Next.js production app).
+   Cian accent + 5-step semáforo (red → orange → yellow → blue → green).
+═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ─────────── SURFACES (dark by default) ─────────── */
+  --rp-bg:         #0F172A;     /* page / app shell */
+  --rp-surface:    #131C2E;     /* cards, sidebar */
+  --rp-elevated:   #1E293B;     /* inputs, hover rows */
+  --rp-elevated-2: #273449;     /* chips, inner cards */
+  --rp-border:     #334155;     /* 1px dividers */
+  --rp-border-hi:  #475569;     /* hover borders */
+
+  /* ─────────── TEXT ─────────── */
+  --rp-text:       #F1F5F9;     /* primary */
+  --rp-text-dim:   #CBD5E1;     /* secondary / labels */
+  --rp-text-mute:  #64748B;     /* tertiary / placeholders */
+
+  /* ─────────── BRAND ACCENT — Cian v2 ─────────── */
+  --rp-accent:     #00D9FF;
+  --rp-accent-dim: #0098B8;
+  --rp-accent-bg:    rgba(0, 217, 255, 0.10);
+  --rp-accent-bg-hi: rgba(0, 217, 255, 0.18);
+
+  /* Alternate legacy accent (green v1, still used in some prototypes) */
+  --rp-accent-alt: #00E5A0;
+
+  /* ─────────── 5-STEP SEMÁFORO (0→100% progress) ───────────
+     0-20% red · 40% orange · 60% yellow · 80% blue · 100% green  */
+  --rp-red:      #EF4444;   --rp-red-bg:    rgba(239, 68, 68, 0.12);
+  --rp-orange:   #F97316;   --rp-orange-bg: rgba(249,115, 22, 0.12);
+  --rp-yellow:   #FBBF24;   --rp-yellow-bg: rgba(251,191, 36, 0.14);
+  --rp-blue:     #3B82F6;   --rp-blue-bg:   rgba( 59,130,246, 0.12);
+  --rp-green:    #10B981;   --rp-green-bg:  rgba( 16,185,129, 0.12);
+
+  /* Neutral / special */
+  --rp-gray:     #6B7280;   --rp-gray-bg:   rgba(107,114,128, 0.14);
+  --rp-purple:   #A855F7;   --rp-purple-bg: rgba(168, 85,247, 0.12);
+  --rp-pink:     #EC4899;
+  --rp-amber:    #FBBF24;   --rp-amber-bg:  rgba(251,191, 36, 0.14);
+
+  /* Semantic aliases */
+  --rp-success: var(--rp-green);
+  --rp-warning: #F59E0B;
+  --rp-danger:  var(--rp-red);
+  --rp-info:    var(--rp-blue);
+
+  /* ─────────── TYPOGRAPHY ─────────── */
+  --rp-font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --rp-font-display: 'Inter Tight', 'Inter', sans-serif;
+  --rp-font-mono:    'JetBrains Mono', 'SF Mono', Menlo, monospace;
+
+  --rp-fs-xs:   10px;
+  --rp-fs-sm:   11px;
+  --rp-fs-base: 13px;     /* body default */
+  --rp-fs-md:   14px;
+  --rp-fs-lg:   16px;
+  --rp-fs-xl:   18px;
+  --rp-fs-2xl:  22px;
+  --rp-fs-3xl:  28px;     /* KPI numbers */
+  --rp-fs-4xl:  36px;
+
+  /* ─────────── SPACING ─────────── */
+  --rp-space-1: 4px;
+  --rp-space-2: 8px;
+  --rp-space-3: 12px;
+  --rp-space-4: 16px;
+  --rp-space-5: 20px;
+  --rp-space-6: 24px;
+  --rp-space-8: 32px;
+  --rp-space-10: 40px;
+
+  /* ─────────── RADII ─────────── */
+  --rp-radius-xs: 3px;
+  --rp-radius-sm: 4px;     /* badges, inputs */
+  --rp-radius:    5px;     /* buttons */
+  --rp-radius-md: 6px;
+  --rp-radius-lg: 8px;     /* cards */
+  --rp-radius-xl: 12px;
+
+  /* ─────────── SHADOWS ─────────── */
+  --rp-shadow-sm:   0 1px 2px rgba(0,0,0,0.4);
+  --rp-shadow-md:   0 4px 12px rgba(0,0,0,0.35);
+  --rp-shadow-lg:   0 8px 24px rgba(0,0,0,0.5);
+  --rp-shadow-xl:   0 20px 60px rgba(0,0,0,0.5);
+  --rp-glow-accent: 0 0 12px rgba(0, 217, 255, 0.5);
+
+  /* ─────────── MOTION ─────────── */
+  --rp-ease:       cubic-bezier(0.22, 1, 0.36, 1);
+  --rp-dur-fast:   0.12s;
+  --rp-dur:        0.18s;
+  --rp-dur-slow:   0.25s;
+}
+
+/* ─────────── SEMANTIC TAG STYLES ─────────── */
+html, body {
+  background: var(--rp-bg);
+  color: var(--rp-text);
+  font-family: var(--rp-font-sans);
+  font-size: var(--rp-fs-base);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01", "ss03";
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--rp-font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+h1 { font-size: var(--rp-fs-4xl); letter-spacing: -0.03em; }
+h2 { font-size: var(--rp-fs-3xl); letter-spacing: -0.03em; }
+h3 { font-size: var(--rp-fs-xl);  }
+h4 { font-size: var(--rp-fs-lg);  }
+h5 { font-size: var(--rp-fs-md);  }
+
+p     { margin: 0; }
+small { font-size: var(--rp-fs-sm); color: var(--rp-text-dim); }
+code, kbd, .mono {
+  font-family: var(--rp-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "zero";
+}
+.num { font-variant-numeric: tabular-nums; }
+
+/* Eyebrow / overline — heavily used for card labels */
+.eyebrow {
+  font-size: var(--rp-fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rp-text-mute);
+}
+
+/* Selection + scrollbar */
+::selection { background: var(--rp-accent); color: var(--rp-bg); }
+::-webkit-scrollbar         { width: 8px; height: 8px; }
+::-webkit-scrollbar-track   { background: transparent; }
+::-webkit-scrollbar-thumb   { background: var(--rp-border); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--rp-border-hi); }
+
+/* Focus ring */
+button:focus-visible, input:focus-visible, a:focus-visible {
+  outline: 2px solid var(--rp-accent);
+  outline-offset: 2px;
+}
+
+/* Signature grid-background — used behind empty-state canvases */
+.rp-grid-bg {
+  background-image:
+    linear-gradient(var(--rp-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--rp-border) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: -1px -1px;
+}
+
+/* Motion primitives */
+@keyframes rp-pulse    { 0%,100%{opacity:1} 50%{opacity:.4} }
+@keyframes rp-fade-in  { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:none} }
+@keyframes rp-slide-in { from{opacity:0;transform:translateX(12px)} to{opacity:1;transform:none} }
+.rp-live-dot { animation: rp-pulse 2s ease-in-out infinite; }
+.rp-fade-in  { animation: rp-fade-in var(--rp-dur-slow) var(--rp-ease); }
+.rp-slide-in { animation: rp-slide-in 0.3s var(--rp-ease); }
