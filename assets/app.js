@@ -56,8 +56,8 @@ const COPY = {
       note: "Aus Datenschutzgründen nennen wir Auftraggeber und konkrete Adressen nur auf direkte Anfrage und mit Einverständnis."
     },
     about: {
-      eyebrow: "Über uns · Dresden", h2a: "Handwerk mit ", h2b: "klarem Standard.",
-      p1: "RenovaPro ist ein in Dresden ansässiges Handwerksunternehmen für Wohnungsrenovierung, Reinigung und Bauleitung. Festes, mehrsprachiges Team — alle Gewerke inhouse, ohne Subunternehmer-Kette.",
+      eyebrow: "Über uns · Bielefeld & Dresden", h2a: "Handwerk mit ", h2b: "klarem Standard.",
+      p1: "RenovaPro ist ein Handwerksunternehmen mit Sitz in Bielefeld und Tätigkeitsschwerpunkt im Großraum Dresden. Festes, mehrsprachiges Team — alle Gewerke inhouse, ohne Subunternehmer-Kette.",
       p2: "Wir arbeiten nach den Standards institutioneller Vermieter: feste Fristen, klare Dokumentation, ein Ansprechpartner pro Projekt. Unsere interne Plattform sorgt für lückenlose Bautagebücher und transparente Übergaben.",
       quote: "„Ein Wort, ein Termin, eine Übergabe — ohne Umwege.\""
     },
@@ -83,7 +83,7 @@ const COPY = {
       ch_phone: "Telefon", ch_mail: "E-Mail", ch_loc: "Standort"
     },
     foot: {
-      blurb: "Familienbetrieb für Wohnungsrenovierung, Reinigung und Bauleitung in Dresden. 13 Mitarbeiter, vier Sprachen, eine Plattform.",
+      blurb: "Familienbetrieb mit Sitz in Bielefeld. Renovierung, Reinigung und Bauleitung im Großraum Dresden. 13 Mitarbeiter, vier Sprachen, eine Plattform.",
       c1: "Leistungen", c2: "Unternehmen", c3: "Recht", portal: "Mitarbeiter-Portal",
       l1: "Renovierung", l2: "Reinigung", l3: "Elektro & Sanitär", l4: "Bauleitung",
       r1: "Impressum", r2: "Datenschutz", r3: "AGB"
@@ -95,7 +95,7 @@ const COPY = {
     hero: {
       pill: "12 obras activas en Dresden",
       h1a: "Renovaciones, limpieza y", h1b: "control de obra", h1c: " para grandes propietarios.",
-      sub: "Empresa familiar en Dresden. Renovación integral, limpieza final y entrega — un solo contacto, precio cerrado, equipo multilingüe.",
+      sub: "Empresa familiar — sede en Bielefeld, obras en el área de Dresden. Renovación integral, limpieza final y entrega: un solo contacto, precio cerrado, equipo multilingüe.",
       cta1: "Solicitar oferta", cta2: "Cómo trabajamos",
       s1: "Unidades entregadas", s2: "Trabajadores en casa", s3: "Puntualidad", s4: "Idiomas del equipo"
     },
@@ -133,8 +133,8 @@ const COPY = {
       note: "Por motivos de privacidad, indicamos clientes y direcciones concretas solo bajo consulta directa y con su consentimiento."
     },
     about: {
-      eyebrow: "Sobre nosotros · Dresden", h2a: "Oficio con ", h2b: "estándar claro.",
-      p1: "RenovaPro es una empresa de Dresden dedicada a renovación de viviendas, limpieza y control de obra. Equipo fijo y multilingüe — todos los oficios en casa, sin cadena de subcontratistas.",
+      eyebrow: "Sobre nosotros · Bielefeld & Dresden", h2a: "Oficio con ", h2b: "estándar claro.",
+      p1: "RenovaPro es una empresa de oficios con sede en Bielefeld y zona principal de actividad en el área de Dresden. Renovación de viviendas, limpieza y control de obra — equipo fijo y multilingüe, todos los oficios en casa, sin cadena de subcontratistas.",
       p2: "Trabajamos con los estándares de los grandes propietarios: plazos fijos, documentación clara, un solo contacto por proyecto. Nuestra plataforma interna asegura bitácoras de obra completas y entregas transparentes.",
       quote: "„Una palabra, una cita, una entrega — sin rodeos.\""
     },
@@ -160,7 +160,7 @@ const COPY = {
       ch_phone: "Teléfono", ch_mail: "Email", ch_loc: "Ubicación"
     },
     foot: {
-      blurb: "Empresa familiar de renovación, limpieza y control de obra en Dresden. 13 trabajadores, cuatro idiomas, una plataforma.",
+      blurb: "Empresa familiar con sede en Bielefeld. Renovación, limpieza y control de obra en el área de Dresden. 13 trabajadores, cuatro idiomas, una plataforma.",
       c1: "Servicios", c2: "Empresa", c3: "Legal", portal: "Portal interno",
       l1: "Renovación", l2: "Limpieza", l3: "Eléctrica y sanitaria", l4: "Control de obra",
       r1: "Aviso legal", r2: "Privacidad", r3: "Términos"
@@ -172,7 +172,7 @@ const COPY = {
     hero: {
       pill: "12 active worksites in Dresden",
       h1a: "Renovation, cleaning &", h1b: "site management", h1c: " for institutional landlords.",
-      sub: "Family business in Dresden. Full refurb, final cleaning and handover — one contact, fixed price, multilingual team.",
+      sub: "Family business — headquartered in Bielefeld, working in the Dresden area. Full refurb, final cleaning and handover: one contact, fixed price, multilingual team.",
       cta1: "Request quote", cta2: "How we work",
       s1: "Apartments delivered", s2: "Workers in-house", s3: "On-time rate", s4: "Languages in team"
     },
@@ -210,8 +210,8 @@ const COPY = {
       note: "For privacy reasons, we only share clients and concrete addresses on direct request and with their consent."
     },
     about: {
-      eyebrow: "About us · Dresden", h2a: "Craftsmanship, ", h2b: "clear standard.",
-      p1: "RenovaPro is a Dresden-based trade company for apartment renovation, cleaning and site management. A stable, multilingual team — all trades in-house, with no subcontractor chain.",
+      eyebrow: "About us · Bielefeld & Dresden", h2a: "Craftsmanship, ", h2b: "clear standard.",
+      p1: "RenovaPro is a trade company headquartered in Bielefeld with primary operations in the greater Dresden area. Apartment renovation, cleaning and site management — a stable, multilingual team, all trades in-house, with no subcontractor chain.",
       p2: "We work to the standards of institutional landlords: fixed deadlines, clear documentation, one contact per project. Our internal platform ensures complete construction logs and transparent handovers.",
       quote: "„One word, one date, one handover — without detours.\""
     },
@@ -237,7 +237,7 @@ const COPY = {
       ch_phone: "Phone", ch_mail: "Email", ch_loc: "Location"
     },
     foot: {
-      blurb: "Family-run renovation, cleaning and site management in Dresden. 13 workers, four languages, one platform.",
+      blurb: "Family business headquartered in Bielefeld. Renovation, cleaning and site management in the greater Dresden area. 13 workers, four languages, one platform.",
       c1: "Services", c2: "Company", c3: "Legal", portal: "Staff portal",
       l1: "Renovation", l2: "Cleaning", l3: "Electrical & plumbing", l4: "Site management",
       r1: "Imprint", r2: "Privacy", r3: "Terms"
