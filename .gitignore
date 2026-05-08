@@ -12,3 +12,8 @@ Thumbs.db
 *.log
 .env
 .env.local
+
+# Claude Code — keep skills + CLAUDE.md, exclude personal settings
+.claude/settings.local.json
+.claude/.cache/
+.claude/cache/
